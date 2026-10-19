@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תפריט ומתכונים לשבת ולחג</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍞</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=David+Libre:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-gold: #c5a059;
+            --dark-gold: #9e7d3b;
+            --light-gold: #fdfbf7;
+            --bg-color: #faf8f5;
+            --card-bg: #ffffff;
+            --text-color: #2c2c2c;
+            --text-muted: #666666;
+            --border-color: #e8e2d5;
+            --accent-red: #a94442;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Assistant', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1f1a14 0%, #342a1e 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+            border-bottom: 4px solid var(--primary-gold);
+        }
+
+        .header-title-box {
+            display: inline-block;
+            border: 2px solid var(--primary-gold);
+            padding: 15px 35px;
+            border-radius: 12px;
+            background: rgba(0, 0, 0, 0.3);
+            box-shadow: inset 0 0 15px rgba(197, 160, 89, 0.2);
+        }
+
+        header h1 {
+            font-family: 'David Libre', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            margin-bottom: 0.3rem;
+            letter-spacing: 1.5px;
+            text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #e2d7c5;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .shabbat-title-input-container {
+            background: var(--card-bg);
+            padding: 15px 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .shabbat-title-input-container label {
+            font-weight: 700;
+            color: var(--dark-gold);
+            font-size: 1.1rem;
+        }
+
+        .shabbat-title-input-container input {
+            flex: 1;
+            min-width: 200px;
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            background: var(--card-bg);
+            padding: 12px 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            background: var(--primary-gold);
+            color: #ffffff;
+            border: none;
+            padding: 10px 18px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: var(--dark-gold);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #e0dacf;
+            color: var(--text-color);
+        }
+
+        .btn-secondary:hover {
+            background: #d0c7b7;
+        }
+
+        .menu-badge {
+            background: var(--accent-red);
+            color: white;
+            border-radius: 50%;
+            padding: 2px 8px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .category-img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .category-title {
+            padding: 15px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--text-color);
+        }
+
+        .view-section {
+            display: none;
+        }
+
+        .view-section.active {
+            display: block;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-gold);
+            padding-bottom: 10px;
+        }
+
+        .section-header h2 {
+            font-family: 'David Libre', serif;
+            color: var(--dark-gold);
+            font-size: 2rem;
+        }
+
+        .recipes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .recipe-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .recipe-card img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+        }
+
+        .recipe-card-content {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .recipe-card-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+
+        .recipe-card-title:hover {
+            color: var(--primary-gold);
+        }
+
+        .recipe-meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .recipe-actions {
+            margin-top: auto;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            padding-top: 10px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .menu-table-container {
+            background: var(--card-bg);
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            padding: 25px;
+            overflow-x: auto;
+        }
+
+        .menu-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 8px;
+            text-align: right;
+        }
+
+        .menu-table th {
+            padding: 12px 15px;
+            color: var(--dark-gold);
+            font-weight: 700;
+            font-size: 1.05rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .menu-table tr.menu-row {
+            background-color: var(--light-gold);
+            transition: var(--transition);
+        }
+
+        .menu-table tr.menu-row.dragging {
+            opacity: 0.5;
+            background-color: #f0e6d2;
+        }
+
+        .menu-table tr.menu-row td {
+            padding: 12px 15px;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: middle;
+        }
+
+        .menu-table tr.menu-row td:first-child {
+            border-right: 4px solid var(--primary-gold);
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        .menu-table tr.menu-row td:last-child {
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+
+        .drag-handle {
+            cursor: grab;
+            font-size: 1.2rem;
+            color: var(--dark-gold);
+            padding-left: 8px;
+            user-select: none;
+        }
+
+        .drag-handle:active {
+            cursor: grabbing;
+        }
+
+        .category-cell {
+            font-weight: 700;
+            color: var(--dark-gold);
+            width: 180px;
+            font-size: 1.05rem;
+        }
+
+        .empty-slot-btn {
+            background: none;
+            border: 1px dashed var(--primary-gold);
+            color: var(--dark-gold);
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .empty-slot-btn:hover {
+            background: #fdf3d8;
+        }
+
+        .custom-item-input, .custom-item-select {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        .custom-item-input {
+            width: 100%;
+        }
+
+        .print-only-text {
+            display: none;
+            font-size: 1rem;
+        }
+
+        .checkbox-cell {
+            text-align: center;
+            width: 110px;
+        }
+
+        .checkbox-cell input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: var(--primary-gold);
+        }
+
+        .action-cell {
+            width: 110px;
+            text-align: center;
+        }
+
+        .item-link {
+            color: var(--dark-gold);
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .item-link:hover {
+            text-decoration: underline;
+        }
+
+        .recipe-detail {
+            background: var(--card-bg);
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+            padding: 25px;
+        }
+
+        .recipe-detail-header {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .recipe-detail-img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .recipe-detail-info {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .recipe-detail-info h2 {
+            font-family: 'David Libre', serif;
+            font-size: 2.2rem;
+            color: var(--dark-gold);
+            margin-bottom: 10px;
+        }
+
+        .detail-meta-box {
+            display: flex;
+            gap: 20px;
+            margin: 15px 0;
+            background: #fdfbf7;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .detail-section {
+            margin-bottom: 20px;
+        }
+
+        .detail-section h3 {
+            color: var(--primary-gold);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .detail-section ul, .detail-section ol {
+            padding-right: 20px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            border-radius: 15px;
+            width: 100%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 80px;
+        }
+
+        @media print {
+            header {
+                background: none !important;
+                color: #000 !important;
+                box-shadow: none !important;
+                border-bottom: 2px solid #000 !important;
+                padding: 1rem !important;
+            }
+            .header-title-box {
+                border: none !important;
+                background: none !important;
+                box-shadow: none !important;
+            }
+            header h1 {
+                color: #000 !important;
+                text-shadow: none !important;
+            }
+            .shabbat-title-input-container, .nav-bar, .btn, button, .recipe-actions, .empty-slot-btn, .custom-item-input, .custom-item-select, .action-cell, th.action-header, .drag-handle, th.drag-header {
+                display: none !important;
+            }
+            .print-only-text {
+                display: block !important;
+            }
+            body {
+                background: #fff !important;
+                padding-bottom: 0 !important;
+            }
+            .container {
+                max-width: 100% !important;
+                padding: 0 !important;
+            }
+            .menu-table-container {
+                border: none !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+            }
+            .menu-table tr.menu-row {
+                background: none !important;
+            }
+            .menu-table tr.menu-row td {
+                border-bottom: 1px solid #ccc !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-title-box">
+            <h1>תפריט ומתכונים לשבת ולחג</h1>
+            <p>תכנון תפריט, ארגון מצרכים ומעקב הכנות</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="shabbat-title-input-container">
+            <label for="shabbat-name-input">שם השבת / החג:</label>
+            <input type="text" id="shabbat-name-input" placeholder="לדוגמה: שבת פרשת בראשית / חג סוכות" oninput="updateShabbatName()">
+        </div>
+
+        <div class="nav-bar">
+            <button class="btn btn-secondary" onclick="showView('home-view')">🏠 דף הבית</button>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <button class="btn btn-secondary" onclick="openFormModal()">➕ הוסף מתכון</button>
+                <button class="btn" onclick="showView('final-menu-view')">
+                    📋 הצג תפריט סופי <span class="menu-badge" id="menu-count">0</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="home-view" class="view-section active">
+            <h2 style="margin-bottom: 20px; color: var(--dark-gold); font-family: 'David Libre', serif;">קטגוריות מתכונים:</h2>
+            <div class="categories-grid" id="categories-container"></div>
+        </div>
+
+        <div id="category-recipes-view" class="view-section">
+            <div class="section-header">
+                <h2 id="category-title-display">מתכונים</h2>
+                <button class="btn btn-secondary" onclick="showView('final-menu-view')">📋 חזרה לתפריט</button>
+            </div>
+            <div class="recipes-grid" id="category-recipes-container"></div>
+        </div>
+
+        <div id="recipe-detail-view" class="view-section">
+            <div class="section-header">
+                <h2>פרטי המתכון</h2>
+                <button class="btn btn-secondary" onclick="goBack()">🔙 חזרה</button>
+            </div>
+            <div class="recipe-detail" id="recipe-detail-container"></div>
+        </div>
+
+        <div id="final-menu-view" class="view-section">
+            <div class="section-header">
+                <h2 id="final-menu-title">התפריט הנבחר לשבת / חג</h2>
+                <div style="display: flex; gap: 10px;">
+                    <button class="btn" onclick="handlePrint()">🖨️ הדפס תפריט</button>
+                    <button class="btn btn-secondary" onclick="clearMenu()">🗑️ איפוס תפריט</button>
+                </div>
+            </div>
+
+            <div class="menu-table-container">
+                <table class="menu-table">
+                    <thead>
+                        <tr>
+                            <th class="drag-header" style="width:40px;"></th>
+                            <th>קטגוריה</th>
+                            <th>שם המאכל / בחירה</th>
+                            <th class="checkbox-cell">התחלה (מצרכים)</th>
+                            <th class="checkbox-cell">סיום (מוכן)</th>
+                            <th class="action-header action-cell">פעולות</th>
+                        </tr>
+                    </thead>
+                    <tbody id="menu-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="recipe-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-form-title">הוספת מתכון חדש</h3>
+                <button style="background:none; border:none; font-size:1.5rem; cursor:pointer;" onclick="closeFormModal()">✕</button>
+            </div>
+            <form id="recipe-form" onsubmit="saveRecipe(event)">
+                <input type="hidden" id="edit-recipe-id" value="">
+                <div class="form-group">
+                    <label>שם המתכון:</label>
+                    <input type="text" id="recipe-name" required>
+                </div>
+                <div class="form-group">
+                    <label>קטגוריה:</label>
+                    <select id="recipe-category" required></select>
+                </div>
+                <div class="form-group">
+                    <label>זמן הכנה:</label>
+                    <input type="text" id="recipe-time" placeholder="למשל: 45 דקות" required>
+                </div>
+                <div class="form-group">
+                    <label>רמת קושי:</label>
+                    <select id="recipe-difficulty">
+                        <option>קל</option>
+                        <option>בינוני</option>
+                        <option>מאתגר</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>קישור לתמונה (URL):</label>
+                    <input type="url" id="recipe-img" placeholder="https://..." required>
+                </div>
+                <div class="form-group">
+                    <label>מצרכים (כל מצרך בשורה חדשה):</label>
+                    <textarea id="recipe-ingredients" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>אופן ההכנה (כל שלב בשורה חדשה):</label>
+                    <textarea id="recipe-instructions" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>הערות / טיפים:</label>
+                    <textarea id="recipe-notes"></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">שמור מתכון</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const categories = [
+            { id: "salads", name: "סלטים", img: "https://www.10dakot.co.il/wp-content/uploads/2014/04/DSC_0095.jpg" },
+            { id: "fish", name: "דגים", img: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400" },
+            { id: "soup", name: "מרקים", img: "https://www.10dakot.co.il/wp-content/uploads/2024/02/%E2%80%8F%E2%80%8FDSC_0294-%D7%A2%D7%95%D7%AA%D7%A7-420x279.jpg" },
+            { id: "chicken", name: "עוף ובשר", img: "https://heninthekitchen.com/wp-content/uploads/2026/09/IMG_8519small-rotated.jpg" },
+            { id: "side", name: "תוספות", img: "https://dmoshe.co.il/wp-content/uploads/2023/07/IMG_0923_jpg-min-scaled-e1707224639683.jpg" },
+            { id: "pies", name: "פשטידות", img: "https://images.unsplash.com/photo-1535920527002-b35e96722eb9?w=400" },
+            { id: "desserts", name: "מנה אחרונה", img: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400" },
+            { id: "cakes", name: "עוגות ומאפים", img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400" }
+        ];
+
+        const defaultRecipes = [
+            {
+                id: 1, categoryId: "salads", name: "סלט מטבוחה אסלית", time: "שעתיים", difficulty: "בינוני",
+                img: "https://images.unsplash.com/photo-1541832676-9b763b0239ab?w=400",
+                ingredients: ["1 ק\"ג עגבניות רכות", "6 שיני שום", "2 פלפלים חריפים", "1/2 כוס שמן", "פפריקה ומלח"],
+                instructions: ["מקלפים עגבניות וקוצצים.", "מבשלים את העגבניות והשום בסיר שעתיים.", "מוסיפים שמן ותבלינים עד צמצום."], notes: "טעים יותר למחרת."
+            },
+            {
+                id: 2, categoryId: "salads", name: "סלט חומוס ביתי", time: "30 דקות", difficulty: "קל",
+                img: "https://images.unsplash.com/photo-1577805947697-89e18249d767?w=400",
+                ingredients: ["2 כוסות גרגרי חומוס מבושלים", "1/2 כוס טחינה גולמית", "מיץ מלימון אחד", "2 שיני שום", "מלח ומים קרים"],
+                instructions: ["רוחצים את החומוס.", "טוחנים את כל הרכיבים במעבד מזון עד למרקם חלק."], notes: "ניתן לעטר בשמן זית ופפריקה."
+            },
+            {
+                id: 17, categoryId: "salads", name: "סלט פטריות חם", time: "20 דקות", difficulty: "קל",
+                img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400",
+                ingredients: ["2 סלסלאות פטריות שמפיניון פרוסות", "1 בצל גדול קצוץ", "2 שיני שום כתושות", "2 כפות רוטב סויה", "1 כף סילאן", "מלח, פלפל שחור, שומשום"],
+                instructions: ["מטגנים את הבצל במעט שמן עד להזהבה.", "מוסיפים את הפטריות והשום ומקפיצים 5 דקות.", "מוסיפים סויה, סילאן ותבלינים, מערבבים עוד דקה ומפזרים שומשום."], notes: "מעולה להגשה חמה או בטמפרטורת החדר."
+            },
+            {
+                id: 18, categoryId: "salads", name: "סלט חצילים מרוסקים (זעלוק)", time: "35 דקות", difficulty: "קל",
+                img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400",
+                ingredients: ["2 חצילים בינוניים", "3 עגבניות רכות קלופות וקצוצות", "4 שיני שום כתושות", "1/4 כוס שמן", "1 כפית כמון", "1 כפית פפריקה מתוקה", "מלח ומיץ לימון"],
+                instructions: ["קולים את החצילים, מוציאים את התוכן וקוצצים דק.", "מבשלים את העגבניות והשום בשמן עד לריכוך.", "מוסיפים את החצילים הקצוצים והתבלינים ומבשלים 10 דקות תוך מעיכה בסיר."], notes: "טעים מאוד עם חלה טרייה."
+            },
+            {
+                id: 19, categoryId: "salads", name: "סלט זיתים מבושל ברוטב עגבניות", time: "30 דקות", difficulty: "קל",
+                img: "https://images.unsplash.com/photo-1541014741259-de529411b96a?w=400",
+                ingredients: ["1 קופסת זיתים ירוקים מגלענים", "2 כפות רסק עגבניות", "1 פלפל אדום חתוך לקוביות", "3 שיני שום פרוסות", "1 כפית פפריקה מתוקה", "1/2 כפית כמון", "מלח ופלפל"],
+                instructions: ["מרתיחים את הזיתים בסיר מים כ-10 דקות למחיקת המרירות ומסננים.", "מטגנים את השום והפלפל, מוסיפים רסק עגבניות, תבלינים ומים.", "מוסיפים את הזיתים ומבשלים על אש נמוכה כ-20 דקות."], notes: "ניתן להוסיף מעט פלפל חריף לטעם פיקנטי."
+            },
+            {
+                id: 6, categoryId: "fish", name: "דג מושט בסגנון מרוקאי", time: "45 דקות", difficulty: "בינוני",
+                img: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400",
+                ingredients: ["4 פילטים של מושט", "1 פלפל אדום חתוך", "1 פלפל חריף", "ראש שום מפורק", "כוס כוסברה", "פפריקה מתוקה, כוסברה יבשה, שמן ומלח"],
+                instructions: ["מסדרים בסיר את הפלפלים והשום.", "מניחים מעל את הדגים.", "מערבבים שמן ותבלינים, יוצקים ומבשלים כ-30 דקות."], notes: "מצוין עם חלה טרייה."
+            },
+            {
+                id: 7, categoryId: "chicken", name: "עוף בתנור עם סילאן ועשבי תיבול", time: "שעה וחצי", difficulty: "קל",
+                img: "https://heninthekitchen.com/wp-content/uploads/2026/09/IMG_8519small-rotated.jpg",
+                ingredients: ["4 כרעי עוף", "3 כפות סילאן", "2 כפות שמן זית", "4 שיני שום כתושות", "טימין, מלח ופלפל"],
+                instructions: ["מערבבים מרינדה ומורחים על העוף.", "אופים ב-200 מעלות כשעה ורבע."], notes: "ניתן להוסיף תפוחי אדמה."
+            },
+            {
+                id: 20, categoryId: "chicken", name: "פאי רועים קלאסי (בשר טחון ופירה)", time: "שעה וחצי", difficulty: "בינוני",
+                img: "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=400",
+                ingredients: ["1/2 ק\"ג בשר בקר טחון", "1 בצל קצוץ", "2 גזרים חתוכים לקוביות קטנות", "2 כפות רסק עגבניות", "6 תפוחי אדמה גדולים לפירה", "מלח, פלפל שחור, ראס אל חנות", "1 ביצה (לפירה)"],
+                instructions: ["מכינים פירה מתפוחי האדמה, מתבלים ומערבבים עם ביצה.", "מטגנים בצל, גזר ובשר טחון עד להשחמה, מוסיפים רסק ותבלינים.", "בתבנית אפייה מניחים שכבת בשר ומעליה משטחים את הפירה.", "אופים ב-190 מעלות כ-35 דקות עד להזהבת הפירה."], notes: "מנה משביעה ומרשימה מאוד."
+            },
+            {
+                id: 11, categoryId: "chicken", name: "טשולנט (חמין) מסורתי לשבת", time: "ללילה שלם", difficulty: "בינוני",
+                img: "https://images.unsplash.com/photo-1547592180-85f173990554?w=400",
+                ingredients: ["1/2 ק\"ג בשר בקר לחמין", "1 כוס שעועית מושרת", "1 כוס גריסים", "4 תפוחי אדמה", "2 בצל מטוגן", "קישקע", "פפריקה, כמוס, מלח, פלפל שחור, סילאן"],
+                instructions: ["מטגנים בצל בתחתית הסיר.", "מוסיפים בשר, שעועית, גריסים ותפוחי אדמה.", "מתבלים, מכסים במים ומביאים לרתיחה.", "מעבירים לפלטה או לתנור ב-100 מעלות לכל הלילה."], notes: "להוסיף ביצים קשות מעל."
+            },
+            {
+                id: 8, categoryId: "side", name: "תפוחי אדמה אפויים מעוכים", time: "50 דקות", difficulty: "קל",
+                img: "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400",
+                ingredients: ["8 תפוחי אדמה קטנים", "1/4 כוס שמן זית", "שום גבישי", "רוזמרין", "מלח גס"],
+                instructions: ["מבשלים את תפוחי האדמה במים עד לריכוך.", "מועכים קלות על תבנית אפייה, יוצקים שמן ותבלינים ואופים עד פריכות."], notes: "להגיש חם."
+            },
+            {
+                id: 21, categoryId: "side", name: "ירקות מוקפצים בסגנון אסייתי", time: "20 דקות", difficulty: "קל",
+                img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400",
+                ingredients: ["1 כרוב פרוס לרצועות", "2 גזרים חתוכים למקלות", "1 פלפל אדום", "1 פלפל צהוב", "1 קישוא חתוך לרצועות", "3 כפות רוטב סויה", "1 כף סילאן", "שמן שומשום ושומשום"],
+                instructions: ["מחממים ווק או מחבת רחבה עם מעט שמן.", "מקפיצים את הירקות על אש גבוהה לפי דרגת קושי (גזר וכרוב תחילה).", "מוסיפים סויה, סילאן ושמן שומשום, מקפיצים עוד 2 דקות ומפזרים שומשום."], notes: "לשמור על פריכות הירקות."
+            },
+            {
+                id: 22, categoryId: "side", name: "צימעס מסורתי (גזר גמדי מתוק)", time: "35 דקות", difficulty: "קל",
+                img: "https://images.unsplash.com/photo-1590779033100-9f60a05a013d?w=400",
+                ingredients: ["1 שקית גזר גמדי מוקפא", "3 כפות דבש או סילאן", "2 כפות סוכר חום", "1 מקל קינמון", "1/2 כוס צימוקים", "1 כף שמן", "קורט מלח"],
+                instructions: ["מניחים את הגזר הגמדי בסיר עם מעט מים.", "מוסיפים דבש, סוכר, צימוקים, קינמון ושמן.", "מבשלים על אש נמוכה כ-30 דקות עד שהגזר רך והרוטב סמיך ומזוגג."], notes: "תוספת מתוקה קלאסית לשבת ולחג."
+            },
+            {
+                id: 14, categoryId: "side", name: "קוגל ירושלמי מסורתי", time: "שעה וחצי", difficulty: "בינוני",
+                img: "https://images.unsplash.com/photo-1535920527002-b35e96722eb9?w=400",
+                ingredients: ["1 חבילת איטריות דקות", "1/2 כוס שמן", "3/4 כוס סוכר (לקרמל)", "4 ביצים", "1 כפית פלפל שחור גרוס", "1/2 כפית מלח"],
+                instructions: ["מבשלים את האיטריות ומסננים.", "מכינים קרמל מהסוכר והשמן בסיר קטן עד להזהבה עמוקה.", "יוצקים את הקרמל בזהירות על האיטריות ומערבבים היטב.", "מצננים מעט, מוסיפים ביצים, פלפל ומלח.", "יוצקים לתבנית ואופים ב-160 מעלות כ-50 דקות."], notes: "פיקנטי ומתוק בו זמנית."
+            },
+            {
+                id: 12, categoryId: "pies", name: "פשטידת קישואים וירקות", time: "50 דקות", difficulty: "קל",
+                img: "https://images.unsplash.com/photo-1535920527002-b35e96722eb9?w=400",
+                ingredients: ["4 קישואים מגוררים ומסוחטים", "1 בצל קצוץ", "3 ביצים", "3/4 כוס קמח", "1/2 כוס שמן", "מלח, פלפל, ואבקת מרק"],
+                instructions: ["מערבבים את כל הרכיבים בקערה עד לקבלת תערובת אחידה.", "יוצקים לתבנית משומנת.", "אופים ב-180 מעלות כ-40 דקות עד להזהבה."], notes: "מתאימה להגשה חמה או בטמפרטורת החדר."
+            },
+            {
+                id: 15, categoryId: "pies", name: "פשטידת תפוחי אדמה ובצל (פשטידה חמה)", time: "שעה", difficulty: "קל",
+                img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400",
+                ingredients: ["5 תפוחי אדמה מבושלים ומעוכים", "2 בצלים מטוגנים מוזהבים", "4 ביצים", "1/3 כוס שמן", "מלח ופלפל שחור"],
+                instructions: ["מערבבים את תפוחי האדמה המעוכים עם הבצל המטוגן, הביצים והתבלינים.", "מעבירים לתבנית אפייה ואופים ב-190 מעלות כ-45 דקות."], notes: "קלאסית וטעימה לכל ארוחה."
+            },
+            {
+                id: 9, categoryId: "soup", name: "מרק עוף מסורתי לשבת", time: "שעתיים", difficulty: "קל",
+                img: "https://www.10dakot.co.il/wp-content/uploads/2024/02/%E2%80%8F%E2%80%8FDSC_0294-%D7%A2%D7%95%D7%AA%D7%A7-420x279.jpg",
+                ingredients: ["חלקי עוף למרק", "2 גזרים", "1 קישוא", "1 בצל", "צרור פטרוזיליה ושמיר", "מלח ופלפל אנגלי"],
+                instructions: ["מביאים את העוף לרתיחה בסיר גדול ומסננים קצף.", "מוסיפים ירקות ותבלינים ומבשלים על אש נמוכה שעתיים."], notes: "להגיש עם אטריות או שקדי מרק."
+            },
+            {
+                id: 10, categoryId: "desserts", name: "קומפוט פירות יבשים וטריים", time: "30 דקות", difficulty: "קל",
+                img: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400",
+                ingredients: ["תפוחי עץ, אגסים", "חופן צימוקים ושזיפים מיובשים", "מקל קינמון", "3 כפות סוכר", "מים"],
+                instructions: ["חותכים את הפירות.", "מבשלים את כל המצרכים בסיר כ-25 דקות עד לריכוך."], notes: "להגיש קר."
+            },
+            {
+                id: 23, categoryId: "desserts", name: "מוס שוקולד פרווה עשיר", time: "20 דקות", difficulty: "קל",
+                img: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=400",
+                ingredients: ["200 גרם שוקולד מריר איכותי", "1 מיכל קצפת צמחית (250 מ\"ל)", "3 ביצים מופרדות", "2 כפות סוכר", "1 כפית תמצית וניל"],
+                instructions: ["ממיסים את השוקולד המריר בבן מארי ומצננים מעט.", "מקציפים את חלבוני הביצים עם הסוכר לקצף יציב.", "מקציפים את הקצפת הצמחית.", "מערבבים את החלמונים והווניל לתוך השוקולד, ואז מקפלים בעדינות את הקצפת והחלבונים.", "מעבירים לכוסיות אישיות ומקררים 4 שעות."], notes: "קינוח חגיגי ונימוח."
+            },
+            {
+                id: 16, categoryId: "cakes", name: "חלת שבת ביתית קלועה", time: "שעתיים וחצי", difficulty: "בינוני",
+                img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400",
+                ingredients: ["1 ק\"ג קמח ניפוי", "2 כפות שמרים יבשים", "1/2 כוס סוכר", "2 כוסות מים חמימים", "1/2 כוס שמן", "1 כף מלח", "שומשום לעיטור"],
+                instructions: ["מערבבים קמח, שמרים וסוכר.", "מוסיפים מים ושמן ולשים כ-8 דקות.", "מוסיפים מלח ולשים עוד 2 דקות.", "מתפיחים שעה עד הכפלת הנפח.", "קולעים חלות, מתפיחים עוד 30 דקות, מברישים בביצה ומפזרים שומשום.", "אופים ב-180 מעלות כ-25 דקות."], notes: "חלות ריחניות ורכות."
+            },
+            {
+                id: 13, categoryId: "cakes", name: "עוגת טורט שיש קלאסית", time: "50 דקות", difficulty: "קל",
+                img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400",
+                ingredients: ["4 ביצים", "1 כוס סוכר", "2 כוסות קמח", "1/2 כוס שמן", "1/2 כוס מיץ תפוזים", "1 שקית אבקת אפייה", "2 כפות קקאו"],
+                instructions: ["מקציפים ביצים וסוכר לקצף תפוח.", "מוסיפים שמן, מיץ, קמח ואבקת אפייה ומערבבים בעדינות.", "מעבירים 3/4 מהבלילה לתבנית, ולרבע הנותר מוסיפים קקאו.", "יוצקים את בלילת השוקולד מעל ויוצרים דוגמת שיש בעזרת סכין.", "אופים ב-175 מעלות כ-40 דקות."], notes: "עוגה עסיסית ומושלמת לצד התה/קפה."
+            }
+        ];
+
+        function loadStoredRecipes() {
+            const storedData = localStorage.getItem('shabbat_recipes');
+            if (!storedData) {
+                localStorage.setItem('shabbat_recipes', JSON.stringify(defaultRecipes));
+                return defaultRecipes;
+            }
+            try {
+                return JSON.parse(storedData);
+            } catch (e) {
+                return defaultRecipes;
+            }
+        }
+
+        let recipes = loadStoredRecipes();
+
+        function createDefaultMenuOrder() {
+            return [
+                { type: 'fixed', key: 'tuna' },
+                { type: 'fixed', key: 'cholent' },
+                { type: 'fixed', key: 'challah' }
+            ];
+        }
+
+        function createDefaultMenuStructure() {
+            return {
+                salads: [],
+                fish: null,
+                chicken: null,
+                side1: null,
+                side2: null,
+                soup: null,
+                dessert: null,
+                tuna: { name: "טונה", startChecked: false, endChecked: false },
+                cholent: { name: "טשולנט (חמין) מסורתי לשבת", recipeId: 11, startChecked: false, endChecked: false },
+                pie: null,
+                cake: null,
+                challah: { name: "חלת שבת ביתית קלועה", recipeId: 16, startChecked: false, endChecked: false },
+                customItems: [],
+                order: createDefaultMenuOrder()
+            };
+        }
+
+        function loadStoredMenu() {
+            const storedMenu = localStorage.getItem('shabbat_menu_structure');
+            if (storedMenu) {
+                try {
+                    const parsed = JSON.parse(storedMenu);
+                    if (!parsed.order || parsed.order.length === 0) {
+                        parsed.order = createDefaultMenuOrder();
+                    }
+                    return parsed;
+                } catch (e) {
+                    return createDefaultMenuStructure();
+                }
+            }
+            return createDefaultMenuStructure();
+        }
+
+        let selectedMenuData = loadStoredMenu();
+        let currentTargetSlot = null;
+        let shabbatName = localStorage.getItem('shabbat_custom_name') || '';
+        let currentHistory = ['home-view'];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCategories();
+            populateCategoryDropdown();
+            updateMenuBadge();
+
+            if (shabbatName) {
+                document.getElementById('shabbat-name-input').value = shabbatName;
+                updateShabbatNameDisplay();
+            }
+        });
+
+        function updateShabbatName() {
+            shabbatName = document.getElementById('shabbat-name-input').value.trim();
+            localStorage.setItem('shabbat_custom_name', shabbatName);
+            updateShabbatNameDisplay();
+        }
+
+        function updateShabbatNameDisplay() {
+            const titleEl = document.getElementById('final-menu-title');
+            if (shabbatName) {
+                titleEl.innerText = `תפריט עבור: ${shabbatName}`;
+            } else {
+                titleEl.innerText = 'התפריט הנבחר לשבת / חג';
+            }
+        }
+
+        function showView(viewId, pushHistory = true) {
+            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+            document.getElementById(viewId).classList.add('active');
+            if (pushHistory && currentHistory[currentHistory.length - 1] !== viewId) {
+                currentHistory.push(viewId);
+            }
+            if (viewId === 'final-menu-view') {
+                renderFinalMenu();
+            }
+        }
+
+        function goBack() {
+            if (currentHistory.length > 1) {
+                currentHistory.pop();
+                showView(currentHistory[currentHistory.length - 1], false);
+            } else {
+                showView('home-view', false);
+            }
+        }
+
+        function renderCategories() {
+            const container = document.getElementById('categories-container');
+            container.innerHTML = categories.map(cat => `
+                <div class="category-card" onclick="openCategory('${cat.id}', '${cat.name}')">
+                    <img src="${cat.img}" alt="${cat.name}" class="category-img">
+                    <div class="category-title">${cat.name}</div>
+                </div>
+            `).join('');
+        }
+
+        function openCategory(catId, catName, targetSlot = null) {
+            if (targetSlot) {
+                currentTargetSlot = targetSlot;
+            }
+            document.getElementById('category-title-display').innerText = `מתכונים בקטגוריית: ${catName}`;
+            const container = document.getElementById('category-recipes-container');
+            const categoryRecipes = recipes.filter(r => r.categoryId === catId);
+
+            if (categoryRecipes.length === 0) {
+                container.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">אין עדיין מתכונים בקטגוריה זו.</p>`;
+            } else {
+                container.innerHTML = categoryRecipes.map(recipe => {
+                    return `
+                        <div class="recipe-card">
+                            <img src="${recipe.img}" alt="${recipe.name}">
+                            <div class="recipe-card-content">
+                                <div class="recipe-card-title" onclick="openRecipeDetail(${recipe.id})">${recipe.name}</div>
+                                <div class="recipe-meta">
+                                    <span>⏱️ ${recipe.time}</span>
+                                    <span>📊 ${recipe.difficulty}</span>
+                                </div>
+                                <div class="recipe-actions">
+                                    <button class="btn" onclick="selectRecipeForSlot(${recipe.id})">➕ שבץ לתפריט</button>
+                                    <button class="btn btn-secondary" onclick="openRecipeDetail(${recipe.id})">הצג</button>
+                                    <button class="btn btn-secondary" onclick="deleteRecipe(${recipe.id})">🗑️ מחק</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+            showView('category-recipes-view');
+        }
+
+        function deleteRecipe(recipeId) {
+            if (confirm("האם למחוק את המתכון לצמיתות ממאגר המתכונים?")) {
+                const deletedRecipe = recipes.find(r => r.id === recipeId);
+                const catId = deletedRecipe ? deletedRecipe.categoryId : null;
+
+                recipes = recipes.filter(r => r.id !== recipeId);
+                localStorage.setItem('shabbat_recipes', JSON.stringify(recipes));
+                
+                if (selectedMenuData.salads) {
+                    selectedMenuData.salads.forEach(s => { if (s.id === recipeId) s.id = null; });
+                }
+                const singleKeys = ['fish', 'chicken', 'side1', 'side2', 'soup', 'pie', 'dessert', 'cake'];
+                singleKeys.forEach(k => { if (selectedMenuData[k] === recipeId) selectedMenuData[k] = null; });
+                
+                saveMenuData();
+
+                if (catId) {
+                    const cat = categories.find(c => c.id === catId);
+                    openCategory(catId, cat ? cat.name : 'מתכונים');
+                } else {
+                    showView('home-view');
+                }
+            }
+        }
+
+        function selectRecipeForSlot(recipeId) {
+            const recipe = recipes.find(r => r.id === recipeId);
+            if (!recipe) return;
+
+            if (!currentTargetSlot) {
+                if (recipe.categoryId === 'salads') {
+                    if (!selectedMenuData.salads) selectedMenuData.salads = [];
+                    const newIndex = selectedMenuData.salads.length;
+                    selectedMenuData.salads.push({ id: recipeId, startChecked: false, endChecked: false });
+                    selectedMenuData.order.push({ type: 'salad', index: newIndex });
+                } else {
+                    const keyMap = { fish: 'fish', chicken: 'chicken', side: 'side1', soup: 'soup', pies: 'pie', desserts: 'dessert', cakes: 'cake' };
+                    const slotKey = keyMap[recipe.categoryId];
+                    if (slotKey) {
+                        selectedMenuData[slotKey] = recipeId;
+                        if (!selectedMenuData.order.some(o => o.key === slotKey)) {
+                            selectedMenuData.order.push({ type: 'single', key: slotKey, label: recipe.categoryId, categoryId: recipe.categoryId });
+                        }
+                    }
+                }
+            } else {
+                if (currentTargetSlot.type === 'salad') {
+                    selectedMenuData.salads[currentTargetSlot.index].id = recipeId;
+                } else if (currentTargetSlot.type === 'single') {
+                    selectedMenuData[currentTargetSlot.key] = recipeId;
+                } else if (currentTargetSlot.type === 'custom') {
+                    selectedMenuData.customItems[currentTargetSlot.index].recipeId = recipeId;
+                    selectedMenuData.customItems[currentTargetSlot.index].name = recipe.name;
+                    selectedMenuData.customItems[currentTargetSlot.index].category = recipe.categoryId;
+                }
+            }
+            currentTargetSlot = null;
+            saveMenuData();
+            showView('final-menu-view');
+        }
+
+        function selectForCustomSlot(customIndex) {
+            currentTargetSlot = { type: 'custom', index: customIndex };
+            showView('home-view');
+        }
+
+        function updateMenuBadge() {
+            let count = 0;
+            if (selectedMenuData.salads) count += selectedMenuData.salads.filter(s => s && s.id).length;
+            if (selectedMenuData.fish) count++;
+            if (selectedMenuData.chicken) count++;
+            if (selectedMenuData.side1) count++;
+            if (selectedMenuData.side2) count++;
+            if (selectedMenuData.soup) count++;
+            if (selectedMenuData.dessert) count++;
+            if (selectedMenuData.tuna) count++;
+            if (selectedMenuData.cholent) count++;
+            if (selectedMenuData.pie) count++;
+            if (selectedMenuData.cake) count++;
+            if (selectedMenuData.challah) count++;
+            if (selectedMenuData.customItems) {
+                count += selectedMenuData.customItems.filter(c => (c.name && c.name.trim() !== '') || c.recipeId).length;
+            }
+
+            document.getElementById('menu-count').innerText = count;
+        }
+
+        function openRecipeDetail(recipeId) {
+            const recipe = recipes.find(r => r.id === recipeId);
+            if (!recipe) return;
+
+            const categoryName = categories.find(c => c.id === recipe.categoryId)?.name || '';
+            const container = document.getElementById('recipe-detail-container');
+
+            container.innerHTML = `
+                <div class="recipe-detail-header">
+                    <img src="${recipe.img}" alt="${recipe.name}" class="recipe-detail-img">
+                    <div class="recipe-detail-info">
+                        <h2>${recipe.name}</h2>
+                        <p style="color: var(--text-muted);">קטגוריה: ${categoryName}</p>
+                        <div class="detail-meta-box">
+                            <div>⏱️ <strong>זמן הכנה:</strong> ${recipe.time}</div>
+                            <div>📊 <strong>רמת קושי:</strong> ${recipe.difficulty}</div>
+                        </div>
+                        <div style="display: flex; gap: 10px; margin-top: 10px;">
+                            <button class="btn btn-secondary" onclick="openFormModal(${recipe.id})">✏️ ערוך מתכון</button>
+                            <button class="btn btn-secondary" onclick="deleteRecipe(${recipe.id})">🗑️ מחק מתכון</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-section">
+                    <h3>מצרכים:</h3>
+                    <ul>${recipe.ingredients.map(ing => `<li>${ing}</li>`).join('')}</ul>
+                </div>
+                <div class="detail-section">
+                    <h3>אופן ההכנה:</h3>
+                    <ol>${recipe.instructions.map(inst => `<li>${inst}</li>`).join('')}</ol>
+                </div>
+                ${recipe.notes ? `<div class="detail-section"><h3>הערות:</h3><p>${recipe.notes}</p></div>` : ''}
+            `;
+
+            showView('recipe-detail-view');
+        }
+
+        function saveMenuData() {
+            localStorage.setItem('shabbat_menu_structure', JSON.stringify(selectedMenuData));
+            updateMenuBadge();
+            renderFinalMenu();
+        }
+
+        function handlePrint() {
+            window.print();
+        }
+
+        const categoryLabels = {
+            fish: 'דגים',
+            chicken: 'עוף / בשר',
+            side1: 'תוספת 1',
+            side2: 'תוספת 2 (רשות)',
+            soup: 'מרק',
+            dessert: 'מנה אחרונה',
+            pie: 'פשטידה',
+            cake: 'עוגה / מאפה'
+        };
+
+        const categoryIds = {
+            fish: 'fish',
+            chicken: 'chicken',
+            side1: 'side',
+            side2: 'side',
+            soup: 'soup',
+            dessert: 'desserts',
+            pie: 'pies',
+            cake: 'cakes'
+        };
+
+        const fixedLabels = {
+            tuna: 'טונה',
+            cholent: 'טשולנט (חמין)',
+            challah: 'חלות'
+        };
+
+        function ensureAllCategoriesInOrder() {
+            if (!selectedMenuData.order) {
+                selectedMenuData.order = createDefaultMenuOrder();
+            }
+
+            const standardKeys = ['salads', 'fish', 'chicken', 'side1', 'side2', 'soup', 'dessert', 'tuna', 'cholent', 'pie', 'cake', 'challah'];
+            
+            standardKeys.forEach(key => {
+                if (key === 'salads') {
+                    if (!selectedMenuData.salads) selectedMenuData.salads = [];
+                    if (selectedMenuData.salads.length === 0) {
+                        if (!selectedMenuData.order.some(o => o.type === 'saladGroup')) {
+                            selectedMenuData.order.push({ type: 'saladGroup' });
+                        }
+                    } else {
+                        selectedMenuData.salads.forEach((_, idx) => {
+                            if (!selectedMenuData.order.some(o => o.type === 'salad' && o.index === idx)) {
+                                selectedMenuData.order.push({ type: 'salad', index: idx });
+                            }
+                        });
+                    }
+                } else if (['tuna', 'cholent', 'challah'].includes(key)) {
+                    if (selectedMenuData[key] && !selectedMenuData.order.some(o => o.type === 'fixed' && o.key === key)) {
+                        selectedMenuData.order.push({ type: 'fixed', key: key });
+                    }
+                } else {
+                    if (!selectedMenuData.order.some(o => o.type === 'single' && o.key === key)) {
+                        selectedMenuData.order.push({ type: 'single', key: key, label: categoryLabels[key], categoryId: categoryIds[key] });
+                    }
+                }
+            });
+
+            if (selectedMenuData.customItems) {
+                selectedMenuData.customItems.forEach((_, idx) => {
+                    if (!selectedMenuData.order.some(o => o.type === 'custom' && o.index === idx)) {
+                        selectedMenuData.order.push({ type: 'custom', index: idx });
+                    }
+                });
+            }
+        }
+
+        function renderFinalMenu() {
+            const tbody = document.getElementById('menu-table-body');
+            updateShabbatNameDisplay();
+            ensureAllCategoriesInOrder();
+
+            let htmlContent = '';
+
+            selectedMenuData.order.forEach((item, orderIndex) => {
+                if (item.type === 'saladGroup') {
+                    htmlContent += `
+                        <tr class="menu-row" draggable="true" data-order-index="${orderIndex}">
+                            <td class="drag-handle">☰</td>
+                            <td class="category-cell">סלטים</td>
+                            <td>
+                                <button class="empty-slot-btn" onclick="addSaladSlot()">➕ הוסף סלט לתפריט</button>
+                            </td>
+                            <td class="checkbox-cell"><input type="checkbox" disabled></td>
+                            <td class="checkbox-cell"><input type="checkbox" disabled></td>
+                            <td class="action-cell"></td>
+                        </tr>
+                    `;
+                } else if (item.type === 'salad') {
+                    const idx = item.index;
+                    const saladSlot = selectedMenuData.salads[idx];
+                    if (!saladSlot) return;
+
+                    const recipe = saladSlot.id ? recipes.find(r => r.id === saladSlot.id) : null;
+
+                    htmlContent += `
+                        <tr class="menu-row" draggable="true" data-order-index="${orderIndex}">
+                            <td class="drag-handle">☰</td>
+                            <td class="category-cell">${idx === 0 ? 'סלטים' : ''}</td>
+                            <td>
+                                ${recipe 
+                                    ? `<span class="item-link" onclick="openRecipeDetail(${recipe.id})">${recipe.name}</span>`
+                                    : `<button class="empty-slot-btn" onclick="openCategory('salads', 'סלטים', {type: 'salad', index: ${idx}})">➕ בחר סלט (${idx + 1})</button>`
+                                }
+                            </td>
+                            <td class="checkbox-cell">
+                                <input type="checkbox" ${saladSlot.startChecked ? 'checked' : ''} ${!recipe ? 'disabled' : ''} onchange="toggleSaladStatus(${idx}, 'startChecked')">
+                            </td>
+                            <td class="checkbox-cell">
+                                <input type="checkbox" ${saladSlot.endChecked ? 'checked' : ''} ${!recipe ? 'disabled' : ''} onchange="toggleSaladStatus(${idx}, 'endChecked')">
+                            </td>
+                            <td class="action-cell">
+                                <button class="btn btn-secondary" style="padding: 4px 8px; font-size: 0.85rem;" onclick="${recipe ? `clearSaladSlot(${idx})` : `removeSaladSlot(${idx})`}">מחק</button>
+                            </td>
+                        </tr>
+                    `;
+                } else if (item.type === 'single') {
+                    const key = item.key;
+                    const label = categoryLabels[key] || item.label;
+                    const categoryId = categoryIds[key] || item.categoryId;
+                    const currentRecipeId = selectedMenuData[key];
+                    const recipe = currentRecipeId ? recipes.find(r => r.id === currentRecipeId) : null;
+
+                    htmlContent += `
+                        <tr class="menu-row" draggable="true" data-order-index="${orderIndex}">
+                            <td class="drag-handle">☰</td>
+                            <td class="category-cell">${label}</td>
+                            <td>
+                                ${recipe 
+                                    ? `<span class="item-link" onclick="openRecipeDetail(${recipe.id})">${recipe.name}</span>`
+                                    : `<button class="empty-slot-btn" onclick="openCategory('${categoryId}', '${label}', {type: 'single', key: '${key}'})">➕ בחר ${label}</button>`
+                                }
+                            </td>
+                            <td class="checkbox-cell">
+                                <input type="checkbox" ${selectedMenuData[key + '_startChecked'] ? 'checked' : ''} ${!recipe ? 'disabled' : ''} onchange="toggleSingleStatus('${key}', 'startChecked')">
+                            </td>
+                            <td class="checkbox-cell">
+                                <input type="checkbox" ${selectedMenuData[key + '_endChecked'] ? 'checked' : ''} ${!recipe ? 'disabled' : ''} onchange="toggleSingleStatus('${key}', 'endChecked')">
+                            </td>
+                            <td class="action-cell">
+                                ${recipe ? `<button class="btn btn-secondary" style="padding: 4px 8px; font-size: 0.85rem;" onclick="clearSingleSlot('${key}')">מחק</button>` : ''}
+                            </td>
+                        </tr>
+                    `;
+                } else if (item.type === 'fixed') {
+                    const objectKey = item.key;
+                    const fixedItem = selectedMenuData[objectKey];
+                    if (!fixedItem) return;
+
+                    const label = fixedLabels[objectKey] || objectKey;
+                    const recipe = fixedItem.recipeId ? recipes.find(r => r.id === fixedItem.recipeId) : null;
+
+                    htmlContent += `
+                        <tr class="menu-row" draggable="true" data-order-index="${orderIndex}">
+                            <td class="drag-handle">☰</td>
+                            <td class="category-cell">${label}</td>
+                            <td>
+                                ${recipe ? `<span class="item-link" onclick="openRecipeDetail(${recipe.id})">${fixedItem.name}</span>` : `<span>${fixedItem.name}</span>`}
+                            </td>
+                            <td class="checkbox-cell">
+                                <input type="checkbox" ${fixedItem.startChecked ? 'checked' : ''} onchange="toggleFixedStatus('${objectKey}', 'startChecked')">
+                            </td>
+                            <td class="checkbox-cell">
+                                <input type="checkbox" ${fixedItem.endChecked ? 'checked' : ''} onchange="toggleFixedStatus('${objectKey}', 'endChecked')">
+                            </td>
+                            <td class="action-cell">
+                                <button class="btn btn-secondary" style="padding: 4px 8px; font-size: 0.85rem;" onclick="removeFixedItem('${objectKey}')">מחק</button>
+                            </td>
+                        </tr>
+                    `;
+                } else if (item.type === 'custom') {
+                    const idx = item.index;
+                    const cItem = selectedMenuData.customItems[idx];
+                    if (!cItem) return;
+
+                    const itemName = cItem.name || '';
+                    const itemCat = cItem.category || 'general';
+                    const recipe = cItem.recipeId ? recipes.find(r => r.id === cItem.recipeId) : null;
+                    
+                    const categoryOptions = [
+                        { id: 'general', name: 'מאכלים נוספים' },
+                        ...categories
+                    ].map(c => `<option value="${c.id}" ${itemCat === c.id ? 'selected' : ''}>${c.name}</option>`).join('');
+
+                    const currentCatName = categories.find(c => c.id === itemCat)?.name || 'מאכלים נוספים';
+
+                    htmlContent += `
+                        <tr class="menu-row" draggable="true" data-order-index="${orderIndex}">
+                            <td class="drag-handle">☰</td>
+                            <td class="category-cell">
+                                <select class="custom-item-select" onchange="updateCustomItemCategory(${idx}, this.value)">
+                                    ${categoryOptions}
+                                </select>
+                            </td>
+                            <td>
+                                ${recipe 
+                                    ? `<span class="item-link" onclick="openRecipeDetail(${recipe.id})">${recipe.name}</span>`
+                                    : `<div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                                         <input type="text" class="custom-item-input" value="${itemName}" placeholder="רשום שם מאכל..." onchange="updateCustomItemName(${idx}, this.value)" style="flex:1; min-width:140px;">
+                                         <button class="empty-slot-btn" onclick="selectForCustomSlot(${idx})">➕ בחר מתכון מהמאגר</button>
+                                       </div>`
+                                }
+                                <span class="print-only-text">(${currentCatName}) ${recipe ? recipe.name : itemName}</span>
+                            </td>
+                            <td class="checkbox-cell">
+                                <input type="checkbox" ${cItem.startChecked ? 'checked' : ''} ${(!itemName.trim() && !recipe) ? 'disabled' : ''} onchange="toggleCustomStatus(${idx}, 'startChecked')">
+                            </td>
+                            <td class="checkbox-cell">
+                                <input type="checkbox" ${cItem.endChecked ? 'checked' : ''} ${(!itemName.trim() && !recipe) ? 'disabled' : ''} onchange="toggleCustomStatus(${idx}, 'endChecked')">
+                            </td>
+                            <td class="action-cell">
+                                <button class="btn btn-secondary" style="padding: 4px 8px; font-size: 0.85rem;" onclick="removeCustomItem(${idx})">מחק</button>
+                            </td>
+                        </tr>
+                    `;
+                }
+            });
+
+            htmlContent += `
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td colspan="4" style="padding-top: 10px;">
+                        <button class="btn btn-secondary" style="font-size:0.85rem; padding: 4px 10px;" onclick="addCustomItem()">➕ הוסף מאכל כללי נוסף</button>
+                    </td>
+                </tr>
+            `;
+
+            tbody.innerHTML = htmlContent;
+            initDragAndDrop();
+        }
+
+        let dragSrcIndex = null;
+
+        function initDragAndDrop() {
+            const rows = document.querySelectorAll('.menu-row[draggable="true"]');
+            rows.forEach(row => {
+                row.addEventListener('dragstart', handleDragStart);
+                row.addEventListener('dragover', handleDragOver);
+                row.addEventListener('drop', handleDrop);
+                row.addEventListener('dragend', handleDragEnd);
+            });
+        }
+
+        function handleDragStart(e) {
+            dragSrcIndex = Number(this.getAttribute('data-order-index'));
+            this.classList.add('dragging');
+            e.dataTransfer.effectAllowed = 'move';
+        }
+
+        function handleDragOver(e) {
+            if (e.preventDefault) {
+                e.preventDefault();
+            }
+            e.dataTransfer.dropEffect = 'move';
+            return false;
+        }
+
+        function handleDrop(e) {
+            if (e.stopPropagation) {
+                e.stopPropagation();
+            }
+            const dropTargetIndex = Number(this.getAttribute('data-order-index'));
+            if (dragSrcIndex !== null && dragSrcIndex !== dropTargetIndex) {
+                const movedItem = selectedMenuData.order.splice(dragSrcIndex, 1)[0];
+                selectedMenuData.order.splice(dropTargetIndex, 0, movedItem);
+                saveMenuData();
+            }
+            return false;
+        }
+
+        function handleDragEnd() {
+            this.classList.remove('dragging');
+            dragSrcIndex = null;
+        }
+
+        function toggleFixedStatus(objectKey, field) {
+            if (selectedMenuData[objectKey]) {
+                selectedMenuData[objectKey][field] = !selectedMenuData[objectKey][field];
+                saveMenuData();
+            }
+        }
+
+        function removeFixedItem(objectKey) {
+            if (confirm('האם למחוק מאכל זה מהתפריט?')) {
+                selectedMenuData[objectKey] = null;
+                selectedMenuData.order = selectedMenuData.order.filter(o => !(o.type === 'fixed' && o.key === objectKey));
+                saveMenuData();
+            }
+        }
+
+        function clearSaladSlot(index) {
+            selectedMenuData.salads[index].id = null;
+            saveMenuData();
+        }
+
+        function toggleSaladStatus(index, field) {
+            selectedMenuData.salads[index][field] = !selectedMenuData.salads[index][field];
+            saveMenuData();
+        }
+
+        function addSaladSlot() {
+            if (!selectedMenuData.salads) selectedMenuData.salads = [];
+            const newIndex = selectedMenuData.salads.length;
+            selectedMenuData.salads.push({ id: null, startChecked: false, endChecked: false });
+            
+            selectedMenuData.order = selectedMenuData.order.filter(o => o.type !== 'saladGroup');
+            selectedMenuData.order.push({ type: 'salad', index: newIndex });
+            saveMenuData();
+        }
+
+        function removeSaladSlot(index) {
+            selectedMenuData.salads.splice(index, 1);
+            selectedMenuData.order = selectedMenuData.order.filter(o => !(o.type === 'salad' && o.index === index));
+            selectedMenuData.order.forEach(o => {
+                if (o.type === 'salad' && o.index > index) {
+                    o.index--;
+                }
+            });
+            saveMenuData();
+        }
+
+        function clearSingleSlot(key) {
+            selectedMenuData[key] = null;
+            saveMenuData();
+        }
+
+        function toggleSingleStatus(key, field) {
+            const statusKey = key + '_' + field;
+            selectedMenuData[statusKey] = !selectedMenuData[statusKey];
+            saveMenuData();
+        }
+
+        function addCustomItem() {
+            if (!selectedMenuData.customItems) selectedMenuData.customItems = [];
+            const newIndex = selectedMenuData.customItems.length;
+            selectedMenuData.customItems.push({ name: '', category: 'general', startChecked: false, endChecked: false });
+            selectedMenuData.order.push({ type: 'custom', index: newIndex });
+            saveMenuData();
+        }
+
+        function updateCustomItemName(index, val) {
+            selectedMenuData.customItems[index].name = val;
+            saveMenuData();
+        }
+
+        function updateCustomItemCategory(index, catVal) {
+            selectedMenuData.customItems[index].category = catVal;
+            saveMenuData();
+        }
+
+        function toggleCustomStatus(index, field) {
+            selectedMenuData.customItems[index][field] = !selectedMenuData.customItems[index][field];
+            saveMenuData();
+        }
+
+        function removeCustomItem(index) {
+            selectedMenuData.customItems.splice(index, 1);
+            selectedMenuData.order = selectedMenuData.order.filter(o => !(o.type === 'custom' && o.index === index));
+            selectedMenuData.order.forEach(o => {
+                if (o.type === 'custom' && o.index > index) {
+                    o.index--;
+                }
+            });
+            saveMenuData();
+        }
+
+        function clearMenu() {
+            if (confirm('האם לאפס את כל התפריט הנבחר?')) {
+                selectedMenuData = createDefaultMenuStructure();
+                saveMenuData();
+            }
+        }
+
+        function populateCategoryDropdown() {
+            const select = document.getElementById('recipe-category');
+            select.innerHTML = categories.map(c => `<option value="${c.id}">${c.name}</option>`).join('');
+        }
+
+        function openFormModal(recipeId = null) {
+            const modalTitle = document.getElementById('modal-form-title');
+            const editIdInput = document.getElementById('edit-recipe-id');
+
+            if (recipeId) {
+                const recipe = recipes.find(r => r.id === recipeId);
+                if (!recipe) return;
+
+                modalTitle.innerText = "עריכת מתכון";
+                editIdInput.value = recipe.id;
+                document.getElementById('recipe-name').value = recipe.name;
+                document.getElementById('recipe-category').value = recipe.categoryId;
+                document.getElementById('recipe-time').value = recipe.time;
+                document.getElementById('recipe-difficulty').value = recipe.difficulty;
+                document.getElementById('recipe-img').value = recipe.img;
+                document.getElementById('recipe-ingredients').value = recipe.ingredients.join('\n');
+                document.getElementById('recipe-instructions').value = recipe.instructions.join('\n');
+                document.getElementById('recipe-notes').value = recipe.notes || '';
+            } else {
+                modalTitle.innerText = "הוספת מתכון חדש";
+                editIdInput.value = "";
+                document.getElementById('recipe-form').reset();
+            }
+
+            document.getElementById('recipe-modal').classList.add('active');
+        }
+
+        function closeFormModal() {
+            document.getElementById('recipe-modal').classList.remove('active');
+        }
+
+        function saveRecipe(event) {
+            event.preventDefault();
+
+            const editId = document.getElementById('edit-recipe-id').value;
+            const recipeData = {
+                categoryId: document.getElementById('recipe-category').value,
+                name: document.getElementById('recipe-name').value,
+                time: document.getElementById('recipe-time').value,
+                difficulty: document.getElementById('recipe-difficulty').value,
+                img: document.getElementById('recipe-img').value,
+                ingredients: document.getElementById('recipe-ingredients').value.split('\n').filter(i => i.trim() !== ''),
+                instructions: document.getElementById('recipe-instructions').value.split('\n').filter(i => i.trim() !== ''),
+                notes: document.getElementById('recipe-notes').value
+            };
+
+            if (editId) {
+                const index = recipes.findIndex(r => r.id == editId);
+                if (index > -1) {
+                    recipes[index] = { id: Number(editId), ...recipeData };
+                }
+            } else {
+                const newRecipe = { id: Date.now(), ...recipeData };
+                recipes.push(newRecipe);
+            }
+
+            localStorage.setItem('shabbat_recipes', JSON.stringify(recipes));
+            closeFormModal();
+
+            const activeView = currentHistory[currentHistory.length - 1];
+            if (activeView === 'recipe-detail-view' && editId) {
+                openRecipeDetail(Number(editId));
+            } else if (activeView === 'category-recipes-view') {
+                const cat = categories.find(c => c.id === recipeData.categoryId);
+                if (cat) openCategory(cat.id, cat.name);
+            } else if (activeView === 'final-menu-view') {
+                renderFinalMenu();
+            }
+        }
+    </script>
+</body>
+</html>
